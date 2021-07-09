@@ -1,0 +1,9 @@
+issuer: ABC Company
+keywords:
+  - ABC Company
+exclude_keywords:
+  - Paid
+fields:
+  amount: \$\d+\.?\d+
+  date: 2021/07/23
+  invoice_number: \[A-Z]+\-\d+
