@@ -4,6 +4,6 @@ keywords:
 exclude_keywords:
   - Paid
 fields:
-  amount: \$\d+\.?\d+
-  date: 2021/07/23
-  invoice_number: \[A-Z]+\-\d+
+  amount: (?<=TOTAL\s\$)\d+?\.\d+\b
+  date: (?<=DUE\sDATE\s)20[0-9][0-9]\/[0-1][0-9]\/[0-3][0-9]\b
+  invoice_number: (?<=INVOICE\s\#\s)[A-Z]{3}\-[0-9]{4}
