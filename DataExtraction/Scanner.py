@@ -10,10 +10,11 @@ pdfScanner: Scan all files with extension '.pdf' in a given directory.
 """
 class pdfScanner:
 
-    def __init__(self, directory:str) -> None:
+    def __init__(self, directory:str, dpi=100) -> None:
 
         self.dir = directory
         self.invoices = []
+        self.dpi = dpi
         self.__load_pdf()
 
     def __load_pdf(self) -> None:
@@ -27,7 +28,7 @@ class pdfScanner:
             if file.endswith('.pdf'):
 
                 pages = []
-                doc = convert_from_path(self.dir + '/' + file, dpi=350)
+                doc = convert_from_path(self.dir + '/' + file, dpi=self.dpi)
 
                 for page in doc:
                     pages.append(page)
@@ -76,3 +77,5 @@ class pdfScanner:
             texts.append(text)
 
         return texts
+
+# %%
